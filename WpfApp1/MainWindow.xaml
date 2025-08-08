@@ -1,0 +1,35 @@
+﻿<ui:FluentWindow x:Class="WpfApp1.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 Title="Dashboard"
+                 Width="900" Height="600"
+                 WindowStartupLocation="CenterScreen"
+                 ExtendsContentIntoTitleBar="True"
+                 WindowBackdropType="Mica">
+
+    <Grid Background="{ui:ThemeResource ApplicationBackgroundBrush}" >
+        <!-- 2 columns: Left = NavigationView, Right = content -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <ui:NavigationView x:Name="Navigation"
+                           IsBackButtonVisible="Collapsed"
+                           PaneDisplayMode="Left"
+                           PaneTitle="Dashboard"
+                           SelectionChanged="Navigation_SelectionChanged"
+                           Grid.Column="0">
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem Content="Home" Icon="Home24" Tag="HomePage"/>
+                <ui:NavigationViewItem Content="Reports" Icon="ChartMultiple24" Tag="ReportsPage"/>
+                <ui:NavigationViewItem Content="Settings" Icon="Settings24" Tag="SettingsPage"/>
+            </ui:NavigationView.MenuItems>
+        </ui:NavigationView>
+
+        <!-- Main content area -->
+        <Frame x:Name="ContentFrame" Grid.Column="1"/>
+    </Grid>
+</ui:FluentWindow>

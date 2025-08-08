@@ -1,0 +1,39 @@
+﻿<Application x:Class="WpfApp1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp1"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             StartupUri="Views/LoginWindow.xaml">
+
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!-- WPFUI Theme + Controls -->
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemesDictionary Theme="Light" />
+                <ui:ControlsDictionary />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Your custom styles -->
+            <Style x:Key="CustomTextBox" TargetType="ui:TextBox">
+                <Setter Property="Padding" Value="12,6"/>
+                <Setter Property="Height" Value="36"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Margin" Value="0,0,0,10"/>
+            </Style>
+
+            <!-- Custom PasswordBox Style -->
+            <Style x:Key="CustomPasswordBox" TargetType="ui:PasswordBox">
+                <Setter Property="Padding" Value="12,6"/>
+                <Setter Property="Height" Value="36"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Margin" Value="0,0,0,10"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

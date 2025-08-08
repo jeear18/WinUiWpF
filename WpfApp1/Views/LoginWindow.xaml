@@ -1,0 +1,30 @@
+﻿<ui:FluentWindow x:Class="WpfApp1.Views.LoginWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:local="clr-namespace:WpfApp1"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 mc:Ignorable="d"
+                 Title="Login"
+                 Width="400"
+                 Height="300"
+                 WindowStartupLocation="CenterScreen"
+                 ResizeMode="NoResize">
+
+    <!-- Use Margin instead of Padding on Grid -->
+    <Grid Background="{ui:ThemeResource ApplicationBackgroundBrush}" Margin="20">
+
+        <!-- StackPanel does not have Spacing in WPF, use Margin on children -->
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Login" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 0 0 12"/>
+
+            <!-- Width kept same; style from App.xaml makes visual contents identical -->
+            <ui:TextBox x:Name="UsernameBox" PlaceholderText="Username" Icon="User24" Width="250" Margin="0,0,0,10"/>
+            <ui:PasswordBox x:Name="PasswordBox" PlaceholderText="Password" Icon="LockClosed24" Width="250"/>
+
+            <ui:Button Content="Login" Width="100" HorizontalAlignment="Center" Margin="0,12,0,0" Click="Login_Click"/>
+
+        </StackPanel>
+    </Grid>
+</ui:FluentWindow>
